@@ -11,7 +11,18 @@
     <h1>MyLibrary — Starter</h1>
   </header>
   <main class="container">
-  
+  <button type="button" id="show-form">New Book</button>
+    <div id="library-display"></div> <dialog id="book-dialog">
+  <form id="book-form">
+    <input id="title" required placeholder="title">
+    <input id="author" required placeholder="author">
+    <input id="pages" type="number" required placeholder="How many pages read?">
+    <label for="read">Read or Not </label>
+    <input id="read" type="checkbox">
+    <button type="submit">Submit</button>
+    <button type="button" id="cancelBtn">Cancel</button>
+  </form>
+</dialog>
   </main>
   <script src="script.js"></script>
 </body>

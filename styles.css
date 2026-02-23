@@ -1,37 +1,83 @@
-/* Simple starter styles */
-:root{
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --accent:#0066ff;
-  --text:#1a1a1a;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  padding: 0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-.site-header{
-  background:linear-gradient(90deg,var(--accent),#0050d4);
-  color:#fff;
-  padding:1rem 0.75rem;
-}
-.container{
-  max-width:800px;
-  margin:2rem auto;
-  background:var(--card);
-  padding:1.5rem;
-  border-radius:8px;
-  box-shadow:0 6px 18px rgba(20,30,40,0.06);
+#library-display {
+  display: grid;
+  /* This line says: "Make columns at least 250px wide, but grow to fill space" */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
+.book-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease;
+}
 
+.book-card:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+}
 
-@media (max-width:480px){
-  .container{margin:1rem;padding:1rem}
+.book-card h3 {
+  margin: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+}
+
+.status-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+  color: white;
+  margin-top: auto; /* Pushes the delete button to the bottom of the card */
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+}
+dialog {
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+/* This styles the faded background behind the popup */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+#book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#book-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.hidden{
+  display:none;
 }
